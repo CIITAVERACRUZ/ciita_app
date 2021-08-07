@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native'
+import { Text, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { globalStyles } from '../../theme/AppTheme'
 
@@ -12,7 +12,7 @@ export const RecoverPasswordScreen = () => {
                 marginTop: top + 10,
             }}
         >
-            
+            <Text>Recover Password</Text>
         </View>
     )
 }

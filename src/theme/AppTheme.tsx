@@ -1,7 +1,19 @@
 import { StyleSheet } from 'react-native';
-//Declarar estilos de uso global en el presente archivo
+import Colors from './Colors';
 export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+
+    authTitle: {
+        color: Colors.yellowText,
+        fontSize: 40,
+        fontWeight: 'bold'
+    },
+    authSubtitle: {
+        color: Colors.cream,
+        fontSize: 35,
+        textAlign: 'center',
+        fontWeight: 'bold'
     }
 });
