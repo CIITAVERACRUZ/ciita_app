@@ -5,11 +5,18 @@ import { SigninScreen } from '../screens/auth/SigninScreen';
 import { SignupScreen } from '../screens/auth/SignupScreen';
 import { BottomTabs } from './BottomTabs';
 import { AuthContext } from '../context/AuthContext';
+import { AccountType } from '../screens/auth/AccountType';
+import { BusinessType } from '../screens/auth/BusinessType';
 
 export type AuthStackType = {
     SigninScreen: undefined,
-    SignupScreen: undefined,
-    RecoverPasswordScreen: undefined
+    SignupScreen: {
+      type: string,
+      name?: 'artisan' | 'hotel' | 'restaurant' | 'other'
+    },
+    AccountType: undefined,
+    RecoverPasswordScreen: undefined,
+    BusinessType: undefined
 }
 
 export type NavigatorType = {
@@ -40,16 +47,18 @@ export const MainNavigation = () => {
 
   return (
     <AuthStack.Navigator
-    screenOptions={{
-      cardStyle: {
-        backgroundColor: 'white'
-      }
-    }}
+      screenOptions={{
+        cardStyle: {
+          backgroundColor: 'white'
+        }
+      }}
       headerMode='none'
       initialRouteName='SigninScreen'
     >
       <AuthStack.Screen name='SigninScreen' component={SigninScreen} />
       <AuthStack.Screen name='SignupScreen' component={SignupScreen} />
+      <AuthStack.Screen name='AccountType' component={AccountType} />
+      <AuthStack.Screen name='BusinessType' component={BusinessType} />
       <AuthStack.Screen name='RecoverPasswordScreen' component={RecoverPasswordScreen} />
     </AuthStack.Navigator>
   );

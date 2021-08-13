@@ -11,7 +11,6 @@ type AuthContextProps = {
     logIn: () => void,
     logOut: () => void,
     removeError: () => void,
-    setAdress: (user: User) => void
 }
 
 const authInitialState: AuthState = {
@@ -33,7 +32,11 @@ export const AuthProvider = ({children}: any) => {
             email: 'dummy@dummy.com',
             name: 'Demo C',
             status: true,
+            type: 'business'
         }
+
+        console.log(dummy);
+        
 
         dispatch({
             type: 'signUp',
@@ -51,13 +54,6 @@ export const AuthProvider = ({children}: any) => {
     }
     const removeError = () => {}
 
-    const setAdress = (user: User) => {
-        dispatch({
-            type: 'setAdress',
-            payload: user 
-        })
-    }
-
     return (
         <AuthContext.Provider value={{
             ...state,
@@ -65,7 +61,6 @@ export const AuthProvider = ({children}: any) => {
             logIn,
             logOut,
             removeError,
-            setAdress
         }}>
             {children}
         </AuthContext.Provider>

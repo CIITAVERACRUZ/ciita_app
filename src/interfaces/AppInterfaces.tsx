@@ -2,7 +2,7 @@ export interface User{
     status: boolean,
     name: string,
     email: string,
-    type: 'negocio' | 'turista'
+    type: 'business' | 'turist'
 }
 
 export interface Location{

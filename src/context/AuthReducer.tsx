@@ -13,7 +13,6 @@ export type AuthAction =
     |{type: 'removeError'}
     |{type: 'notAuthenticated'}
     |{type: 'logout'}
-    |{type: 'setAdress', payload: User}
 
 
 export const authReducer = (state: AuthState, action: AuthAction):AuthState => {
@@ -42,12 +41,6 @@ export const authReducer = (state: AuthState, action: AuthAction):AuthState => {
                 token: action.payload.token,
                 user: action.payload.user
             }
-        case 'setAdress':
-            return{
-                ...state,
-                user: action.payload
-            }
-
         case 'logout':
         case 'notAuthenticated':
             return {

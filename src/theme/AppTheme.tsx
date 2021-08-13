@@ -1,10 +1,9 @@
 import { StyleSheet } from 'react-native';
-import Colors from './Colors';
+import {Colors} from './Colors';
 export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
     },
-
     authTitle: {
         color: Colors.yellowText,
         fontSize: 40,

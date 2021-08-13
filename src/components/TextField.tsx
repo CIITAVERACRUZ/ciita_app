@@ -6,16 +6,22 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 interface Props{
     placeholder: string,
-    icon?: string
+    icon?: string,
+    onChangeText: (text: string) => void
 }
 
-export const TextField = ({placeholder, icon}: Props) => {
+export const TextField = ({placeholder, icon, onChangeText}: Props) => {
     return (
-        <View style={styles.inputContainer}>
+        <View 
+            style={styles.inputContainer}
+        >
             { icon && <Icon name={icon} size={25} />}
-            <TextInput style={{color: 'black', flex: 1, marginLeft: icon? 10:0 }}
-                       placeholder={placeholder}
-                       placeholderTextColor='gray' />
+            <TextInput 
+                style={{color: 'black', flex: 1, marginLeft: icon? 10:0 }}
+                placeholder={placeholder}
+                placeholderTextColor='gray' 
+                onChangeText={onChangeText}
+            />
         </View>
     )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
-import Colors from '../theme/Colors';
+import {Colors} from '../theme/Colors';
 
 interface Props{
     title: string,
-    onPress?: () => void
+    onPress: () => void
 }
 
 export const CustomButton = ( {title, onPress}: Props ) => {

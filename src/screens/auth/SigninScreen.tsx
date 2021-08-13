@@ -1,29 +1,45 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react'
+import { useContext } from 'react';
+import { useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { CustomButton } from '../../components/CustomButton';
 import { TextClickeable } from '../../components/TextClickable';
 import { TextField } from '../../components/TextField';
+import { AuthContext } from '../../context/AuthContext';
 import { globalStyles } from '../../theme/AppTheme'
-import Colors from '../../theme/Colors';
+import {Colors} from '../../theme/Colors';
+import { SignupScreen } from './SignupScreen';
 
 interface Props extends StackScreenProps<any, any>{}
 
 export const SigninScreen = ({navigation}: Props) => {
     const { top } = useSafeAreaInsets();
-    return (
-        <LinearGradient colors={['#1DBCFB', '#FBD517', '#D671BF']} style={styles.linearGradient} >
+    const { signUp } = useContext(AuthContext);
 
-        <View 
-            style={{
-                ...globalStyles.container,
-                paddingTop: top + 10,
-                alignItems: 'center',
-                paddingHorizontal: 15
-            }}
-        >
+    const login = () => {
+        signUp();
+    }
+
+    const handleTextChange = ( text: string ) => {
+        console.log(text);
+    }
+
+    return (
+        <LinearGradient colors={[Colors.skyblue, Colors.yellow, Colors.pink]} style={styles.linearGradient} >
+
+        <ScrollView>
+            <View             
+                style={{
+                    ...globalStyles.container,
+                    paddingTop: top + 10,
+                    paddingHorizontal: 15,
+                    alignItems: 'center'
+                }}
+            >
                 <Image 
                     style={styles.logo}
                     source={require('../../assets/images/volador.png')}
@@ -38,39 +54,34 @@ export const SigninScreen = ({navigation}: Props) => {
                     <TextField 
                         placeholder='Email'
                         icon='mail-outline'
+                        onChangeText={handleTextChange}
+
                     />
                     <View style={{marginBottom: 20}} />
                     <TextField 
                         placeholder='Password'
                         icon='lock-closed-outline'
+                        onChangeText={handleTextChange}
                     />
                     <View style={{marginBottom: 30}} />
                     <CustomButton
                         title='Login'
-                        
+                        onPress={login}
                     />
                 </View>
 
                 <View style={styles.links}>
                     <TextClickeable 
-                        onPress={() => navigation.navigate('SignupScreen') }                        
+                        onPress={() => navigation.navigate('AccountType') }                        
                         color='white' 
                         title='¿No tienes una cuenta?  Regístrate Aquí'/>
                     <TextClickeable 
                         onPress={() => navigation.navigate('RecoverPasswordScreen') }
                         color='white' 
                         title='¿Olvidaste tu contraseña?  Click Aquí'/> 
-                </View>
-                {/* 
-                <Image 
-                    style={styles.cinta}
-                    source={require('../../assets/images/cinta.png')}
-                    resizeMode='contain'
-                /> */}
-
-
-            
-        </View>
+                </View>          
+            </View>
+        </ScrollView>
         </LinearGradient>
 
     )
