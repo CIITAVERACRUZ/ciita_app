@@ -70,7 +70,9 @@ export const BottomTabs = () => {
           shadowOpacity: 0,
           shadowRadius: 0,
           shadowColor: 'transparent',
-          borderTopWidth: 0
+          borderTopWidth: 0,
+          marginBottom: 5,
+          marginTop: 5
         }
       }}
 

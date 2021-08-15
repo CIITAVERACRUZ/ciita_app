@@ -7,6 +7,8 @@ export const BusinessScreen = () => {
         <View>
             <Header
                 title='Negocios'
+                showSearchBar
+                searchBarPlaceholder='Busca negocios'
             />
             <Text>Negocios</Text>
         </View>

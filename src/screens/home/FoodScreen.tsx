@@ -7,6 +7,8 @@ export const FoodScreen = () => {
         <View>
             <Header
                 title='Comida'
+                showSearchBar
+                searchBarPlaceholder='Busca comida'
             />
             <Text>Gastronomía</Text>
         </View>

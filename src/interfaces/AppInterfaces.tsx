@@ -74,3 +74,19 @@ export interface Artesano{
     opinions?: Rate[]
 }
 
+export interface HomeItem {
+    id: number,
+    title: string,
+    description: string,
+    image: string,
+    type: 'Historia' | 'Cultura' | 'Turismo'
+}
+
+export interface Evento{
+    title: string, 
+    description: string, 
+    month: string,
+    date: string,
+    image: string,
+    type: string
+}

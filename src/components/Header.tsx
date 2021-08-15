@@ -7,21 +7,22 @@ import { SearchBar } from './SearchBar'
 
 interface Props{
     title: string,
+    hideTitle?: boolean,
     showSearchBar?: boolean,
-    hideTitle?: boolean
+    searchBarPlaceholder?: string
 }
 
 
 
-export const Header = ({title, showSearchBar, hideTitle}: Props) => {
+export const Header = ({title, showSearchBar, hideTitle, searchBarPlaceholder}: Props) => {
 
     const Title = () => (
         <Text 
-        style={{
-            fontSize: 30,
-            fontWeight: 'bold',
-            color: 'white'
-        }}
+            style={{
+                fontSize: 30,
+                fontWeight: 'bold',
+                color: 'white'
+            }}
         >
             {title}
         </Text>
@@ -44,19 +45,11 @@ export const Header = ({title, showSearchBar, hideTitle}: Props) => {
                 }}
                 colors={[Colors.skyblue, Colors.slime]}
             >
-
                 {
-                    (!hideTitle || !showSearchBar) && (<Title />)
+                    showSearchBar ? (<SearchBar placeholder={searchBarPlaceholder} />)
+                    :(!hideTitle && (<Title />))
                 }
-
-                {
-                    showSearchBar && <SearchBar />
-                }
-
-
-                <View
-                    style={{height: 70, width: 70}}
-                >
+                <View style={{height: 70, width: 70}}>
                     <Image 
                         style={{flex: 1, width: '100%'}}
                         source={require('../assets/images/gorro.png')}

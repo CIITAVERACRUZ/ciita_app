@@ -7,6 +7,8 @@ export const PlacesScreen = () => {
         <View>
             <Header
                 title='Sitios'
+                showSearchBar
+                searchBarPlaceholder='Busca sitios'
             />
             <Text>Sitios de interes</Text>
         </View>
