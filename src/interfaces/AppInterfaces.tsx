@@ -21,7 +21,7 @@ export interface Platillo{
     name: string,
     description?: string,
     places?: Restaurant[],
-    image?: string,
+    images: string[],
 }
 
 export interface Habitacion{
@@ -89,4 +89,11 @@ export interface Evento{
     date: string,
     image: string,
     type: string
+}
+
+export interface Sitio{
+    name: string,
+    description: string,
+    location: Location
+    images: string[]
 }

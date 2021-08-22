@@ -18,18 +18,23 @@ export const HomeCard = ({item}: Props) => {
 
     return (
         <TouchableOpacity style={styles.card}>
-            <View style={styles.imageContainer}>
-                <Image 
-                    style={styles.image}  
-                    source={{uri: item.image}} 
-                    resizeMode='contain'
-                />
+            <View style={styles.header}>
+                {
+                   item.type === 'Evento' && <Text style={styles.title} >{item.title}</Text>
+                }
+                <Text style={{...styles.type, backgroundColor: getTypeColor()}} >{item.type}</Text>
             </View>
-            <View style={{flex: 1}}>
-                <Text style={{textAlign: 'justify'}}>{item.description.slice(0, 100) + '...'}</Text>
-            </View>
-            <View style={{...styles.type, backgroundColor: getTypeColor()}}>
-                <Text style={{marginHorizontal: 5, marginVertical: 2, color: 'white'}} >{item.type}</Text>
+            <View style={styles.cardBody} >
+                <View style={styles.imageContainer}>
+                    <Image 
+                        style={styles.image}  
+                        source={{uri: item.image}} 
+                        resizeMode='contain'
+                    />
+                </View>
+                <View style={{flex: 1}}>
+                    <Text style={{textAlign: 'justify'}}>{item.description.slice(0, 100) + '...'}</Text>
+                </View>
             </View>
         </TouchableOpacity>
     )
@@ -40,30 +45,41 @@ const styles = StyleSheet.create({
         width: '90%',
         justifyContent: 'center',
         alignItems: 'center',
+        marginBottom: 15,
+    },
+    header:{
+        width: '100%',
+        minHeight: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    titleContainer: {
+        position: 'absolute',
+        top: 0,
+        left: 0
+    },
+    title: {
+        fontWeight: 'bold',
+        fontSize: 15
+    },
+    type: {
+        position: 'absolute',
+        right: 0,
+        borderRadius: 20,
+        color: 'white',
+        paddingHorizontal: 6
+    },
+    cardBody: {
         flexDirection: 'row'
     },
     imageContainer: {
-        height: 150,
+        height: 120,
         width: 150,
         marginRight: 15,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-        overflow: 'hidden'
     },
     image: {
         flex: 1, 
         width: '100%',
     },
-    type: {
-        position: 'absolute',
-        right: 0,
-        top: 15,
-        borderRadius: 20
-    }
+
 });

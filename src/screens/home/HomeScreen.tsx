@@ -71,7 +71,10 @@ export const HomeScreen = () => {
        const activeMonth = actualMonth === months.indexOf(item);
        
        return (
-            <TouchableOpacity style={{width: 50, marginVertical: 10}}>
+            <TouchableOpacity 
+                style={{width: 50, marginVertical: 10}}
+                activeOpacity={.7}
+            >
                 <Text style={{color: activeMonth? Colors.skyblue : 'black'}} >{item}</Text>
             </TouchableOpacity>
        ) 
@@ -114,7 +117,7 @@ export const HomeScreen = () => {
                     renderItem={({item}) => renderEvents(item)}
                     ListHeaderComponent={() => (
                         <FlatList
-                            style={{paddingHorizontal: 20}}
+                            style={{paddingHorizontal: 20, marginBottom: 10}}
                             horizontal
                             data={months}
                             renderItem={({item}) => renderMonths(item)}
