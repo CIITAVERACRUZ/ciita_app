@@ -2,13 +2,32 @@ import React, { useState } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import Toast from 'react-native-toast-message'
 import { Header } from '../../components/Header'
 import { ScreenItem } from '../../components/ScreenItem'
 import { Sitios } from '../../data/SitiosData'
+import { useSearchBar } from '../../hooks/useSearchBar'
 import { Colors } from '../../theme/Colors'
 
 export const PlacesScreen = () => {
     const [items, setItems] = useState(Sitios);
+    const [searchBarValue, setSearchBarValue] = useState<string | undefined>(undefined);
+    const { searchByName, result } = useSearchBar();
+
+    const searchBarChangeText = async(text: string) => {
+        if(text === '') return setItems(Sitios);
+        let result = await searchByName(text.toLocaleLowerCase().trim() , Sitios);      
+        if(result.length > 0) setItems(result);
+        else {
+            Toast.show({  
+                type: 'info',
+                position:  'top',
+                text1: 'Oops!',
+                text2: 'No hay resultados para tu búsqueda'
+            });
+        }
+            
+    }
     
     return (
         <SafeAreaView style={{flex: 1}}>
@@ -16,6 +35,8 @@ export const PlacesScreen = () => {
                 title='Sitios'
                 showSearchBar
                 searchBarPlaceholder='Busca sitios'
+                searchBarValue={searchBarValue}
+                onChangeText={(text) => searchBarChangeText(text)}
             />
 
             <FlatList 

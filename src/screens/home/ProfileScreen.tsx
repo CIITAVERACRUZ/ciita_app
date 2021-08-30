@@ -62,7 +62,7 @@ export const ProfileScreen = () => {
             <View style={{...styles.text, marginTop: 10, height: 160, flexDirection: 'column'}}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Icon name='images-outline' style={{marginLeft: 15}} size={20} />
-                    <TextInput style={styles.input} >Fotos</TextInput>
+                    <Text style={{...styles.input, marginVertical: 10}} >Fotos</Text>
                 </View>
                 <FlatList
                     style={{width: '100%'}}
@@ -80,7 +80,7 @@ export const ProfileScreen = () => {
             <View style={{...styles.text, marginTop: 10, height: 160, flexDirection: 'column'}}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Icon name='pricetags-outline' style={{marginLeft: 15}} size={20} />
-                    <TextInput style={styles.input} >Productos</TextInput>
+                    <Text style={{...styles.input, marginVertical: 10}} >Productos</Text>
                 </View>
                 <FlatList
                     style={{width: '100%'}}
@@ -129,6 +129,17 @@ const styles = StyleSheet.create({
         paddingVertical: 15, 
         borderRadius: 25
     },
-    text: {flexDirection: 'row', backgroundColor: Colors.cream, width: '85%', borderRadius: 20 ,height: 40, alignItems: 'center', overflow: 'hidden'},
-    input: {marginLeft: 10, paddingRight: 50}
+    text: {
+        flexDirection: 'row',
+        backgroundColor: Colors.cream, 
+        width: '85%', borderRadius: 20 ,
+        height: 40, 
+        alignItems: 'center', 
+        overflow: 'hidden'
+    },
+    input: {
+        marginLeft: 10, 
+        paddingRight: 50,
+        color: 'black'
+    }
 });

@@ -8,6 +8,7 @@ import { ProfileScreen } from '../screens/home/ProfileScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Colors } from '../theme/Colors';
 import { StyleSheet, View } from 'react-native';
+import { BusinessStack, FoodsStack, HomeStack, PlacesStack } from './AppStacks';
 
 export type BottomTabsType = {
   HomeScreen: undefined,
@@ -78,10 +79,10 @@ export const BottomTabs = () => {
 
       initialRouteName='HomeScreen'
     >
-      <Tab.Screen name="HomeScreen" component={HomeScreen} />
-      <Tab.Screen name="PlacesScreen" component={PlacesScreen} />
-      <Tab.Screen name="FoodScreen" component={FoodScreen} />
-      <Tab.Screen name="BusinessScreen" component={BusinessScreen} />
+      <Tab.Screen name="HomeScreen" component={HomeStack} />
+      <Tab.Screen name="PlacesScreen" component={PlacesStack} />
+      <Tab.Screen name="FoodScreen" component={FoodsStack} />
+      <Tab.Screen name="BusinessScreen" component={BusinessStack} />
       <Tab.Screen name="ProfileScreen" component={ProfileScreen} />
     </Tab.Navigator>
   );

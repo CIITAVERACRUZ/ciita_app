@@ -9,12 +9,14 @@ interface Props{
     title: string,
     hideTitle?: boolean,
     showSearchBar?: boolean,
-    searchBarPlaceholder?: string
+    searchBarPlaceholder?: string,
+    searchBarValue?: string,
+    onChangeText?: (text: string) => void
 }
 
 
 
-export const Header = ({title, showSearchBar, hideTitle, searchBarPlaceholder}: Props) => {
+export const Header = ({title, showSearchBar, hideTitle, searchBarPlaceholder, searchBarValue, onChangeText}: Props) => {
 
     const Title = () => (
         <Text 
@@ -46,7 +48,12 @@ export const Header = ({title, showSearchBar, hideTitle, searchBarPlaceholder}: 
                 colors={[Colors.skyblue, Colors.slime]}
             >
                 {
-                    showSearchBar ? (<SearchBar placeholder={searchBarPlaceholder} />)
+                    showSearchBar ? 
+                    (<SearchBar 
+                        placeholder={searchBarPlaceholder} 
+                        value={searchBarValue}
+                        onChangeText={onChangeText!}
+                    />)
                     :(!hideTitle && (<Title />))
                 }
                 <View style={{height: 70, width: 70}}>

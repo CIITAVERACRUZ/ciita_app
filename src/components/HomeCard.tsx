@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Evento, HomeItem } from '../interfaces/AppInterfaces'
@@ -9,6 +10,7 @@ interface Props{
 }
 
 export const HomeCard = ({item}: Props) => {
+    const {navigate} = useNavigation();
     const getTypeColor = () => {
         if(item.type === 'Turismo') return Colors.lime;
         if(item.type === 'Cultura') return Colors.pink;
@@ -17,7 +19,7 @@ export const HomeCard = ({item}: Props) => {
     }
 
     return (
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigate('HomeDetails', {image: item.image, title: item.title, desc: item.description})}>
             <View style={styles.header}>
                 {
                    item.type === 'Evento' && <Text style={styles.title} >{item.title}</Text>

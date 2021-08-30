@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react'
 import { TouchableOpacity, View, Image, Text, StyleSheet } from 'react-native'
 import { Platillo, Sitio } from '../interfaces/AppInterfaces';
@@ -8,10 +9,14 @@ interface Props{
 }
 
 export const ScreenItem = ({item}: Props) => {
+
+    const { navigate } = useNavigation();
+
     return (
         <TouchableOpacity 
             style={styles.placeContainer}
             activeOpacity={.7}
+            onPress={() => navigate('DetailsScreen', {item})}
         >
             <View style={{height: '100%', width: '100%'}}>
                 <Image source={{uri: item.images[0]}} style={{flex: 1}} />

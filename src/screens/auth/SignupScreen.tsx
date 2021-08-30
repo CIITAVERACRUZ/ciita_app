@@ -14,7 +14,9 @@ interface Props extends StackScreenProps<AuthStackType, 'SignupScreen'>{}
 
 export const SignupScreen = ({navigation, route}: Props) => {
     const { top } = useSafeAreaInsets();
-    const { type, name } = route.params; 
+    let type = route.params?.type;
+    let name = route.params?.name;
+
 
     const handleTextChange = (text: string) => {
         console.log(text);

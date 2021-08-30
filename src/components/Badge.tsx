@@ -14,9 +14,7 @@ export const Badge = ({text, onPress, style, active, activeColor}: Props) => {
     return (
         <TouchableOpacity
             style={[style ,{
-                maxWidth: 65,
-                paddingVertical: 5,
-                paddingHorizontal: 5,
+                maxWidth: 200,
                 borderRadius: 20,
                 backgroundColor: active? activeColor : 'white',
                 justifyContent: 'center',
@@ -26,7 +24,7 @@ export const Badge = ({text, onPress, style, active, activeColor}: Props) => {
             }]}
             onPress={onPress}
         >
-            <Text style={{color: active? 'white' : 'black'}}>
+            <Text style={{color: active? 'white' : 'black', paddingVertical: 5, paddingHorizontal: 10}}>
                 {text}
             </Text>
         </TouchableOpacity>

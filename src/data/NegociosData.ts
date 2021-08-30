@@ -16,6 +16,20 @@ export const Restaurants: Restaurant[] = [
         productsImages: []
     },
     {
+        name: 'Restaurant El Volador',
+        description: 'Restaurant con deliciosos platillos mexicanos tradicionales.',
+        schedule: 'Lunes a Domingo 9:00 a.m. – 10 p.m.',
+        location: {
+            lat: 20.4456119,
+            lng: -97.3235387,
+        },
+        images: [
+            'https://media-cdn.tripadvisor.com/media/photo-s/0e/93/86/07/cerveza-totonaca-artesanal.jpg'
+        ],
+        products: [],
+        productsImages: []
+    },  
+    {
         name: 'Nakú Restaurante Papanteco',
         description: 'Restaurante orientado a preservar la cultura gastronómica de la región del Totonacapan',
         schedule: 'Lunes a Domingo 8:00 a.m. – 8:00 p.m',
@@ -202,9 +216,50 @@ export const Hoteles: Hotel[] = [
         ],
         hasRestaurant: false
     },
+    {
+        name: 'Hotel Santo Domingo',
+        description: 'El Hotel Santo Domingo cuenta con cómodas habitaciones con todos los servicios para una relajante estadía.',
+        location: {
+            lat: 0,
+            lng: 0
+        },
+        checkIn: 'Hora de entrada: 15:00 hrs. Hora de salida: 12:00 hrs.',
+        images: [],
+        productsImages: [],
+        products: [
+            {
+                name: 'Habitación Triple.',
+                description: '3 camas matrimoniales. Para 6 personas',
+                price: 800
+            },
+            {
+                name: 'Habitación doble.',
+                description: '2 camas individuales. Para 3 personas',
+                price: 450
+            },
+            {
+                name: 'Habitación sencilla',
+                description: '1 cama matrimonial. Para 2 personas',
+                price: 400
+            },
+        ],
+        hasRestaurant: false
+    },
 ]
 
 export const Artesanos: Artesano[] = [
+    {
+        name: 'Artesanías Dummy',
+        description: 'El lugar ideal para llevar algo de Papantla a tu hogar, ya que ofrece ropa típica, curiosidades y alimentos.',
+        location: {
+            lat: 20.4459705,
+            lng: -97.326185
+        },
+        images: [
+            'https://fastly.4sqi.net/img/general/600x600/451956_eY-wzqGTHsnIrofTNfeFN4DfzYdXU65I0dC0rNjsads.jpg'
+        ],
+        productsImages: []
+    },
     {
         name: 'Artesanías y Curiosidades “La Josefina”',
         description: 'Venta de ropa típica, recuerdos, juguetes tradicionales, entre muchos otros artículos que pueden ser de interés para los turistas en la región.',

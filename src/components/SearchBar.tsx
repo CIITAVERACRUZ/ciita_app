@@ -1,13 +1,16 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/Ionicons'
+import { Colors } from '../theme/Colors'
 
 interface Props{
-    placeholder?: string
+    placeholder?: string,
+    value?: string,
+    onChangeText: (text: string) => void
 }
 
-export const SearchBar = ({placeholder}: Props) => {
+export const SearchBar = ({placeholder, value, onChangeText}: Props) => {
     return (
         <View 
             style={{
@@ -32,10 +35,14 @@ export const SearchBar = ({placeholder}: Props) => {
                 <Icon name='search' size={20} />
                 <TextInput
                     placeholder={placeholder}
+                    value={value}
+                    onChangeText={(text) => onChangeText(text)}
+                    placeholderTextColor='gray'
                     style={{
                         flex: 1,
                         paddingTop: 0,
-                        paddingBottom: 0
+                        paddingBottom: 0,
+                        color: 'black'
                     }}
                 />
             </View>
