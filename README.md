@@ -2,7 +2,7 @@
 
 Aplicación móvil destinada al apoyo de los comerciantes y negocios del pueblo de Papantla de Olarte, Veracruz.
 
-El instalable demo se encuentra en el siguiente [enlace](https://classic.yarnpkg.com/CAMBIAR-ESTE-ENLACE/).    
+El instalable demo se encuentra en el siguiente [enlace](https://drive.google.com/file/d/1pnu0k_jjqYXESt5sufHL2TiQPseyUr_I/view?usp=sharing).    
 
 
 Es probable que los celulares Android rechacen la instalación, seguir el siguiente [enlace](https://www.xatakandroid.com/tutoriales/como-instalar-aplicaciones-en-apk-en-un-movil-android) para poder instalarla. (Este paso no será necesario posteriormente ya que la aplicación estará disponible en las tiendas oficiales de Android y iOS).
@@ -25,6 +25,6 @@ yarn install
 
 ## Pasos siguientes
 
-En la sección proyecto del presente repositorio he dejado unas cuantas tareas faltantes, las cuáles servirán de pauta para los siguientes pasos del proyecto.
+En la sección [proyecto](https://github.com/CIITAVERACRUZ/ciita_app/projects/1) del presente repositorio he dejado unas cuantas tareas faltantes, las cuáles servirán de pauta para los siguientes pasos del proyecto. Se sugiere continuar con la metodología [Kanban](https://www.youtube.com/watch?v=J3QUbmNk3Es) mediante el uso de los issues de GitHub. 
 
 
