@@ -18,7 +18,7 @@ yarn install
 ```
 
 En caso de no tener conocimiento de React Native, la documentación se encuentra en el siguiente [enlace](https://reactnative.dev/docs/getting-started)  
-Para la instalación es necesario seguir la sección ['Enviroment Setup'](https://reactnative.dev/docs/environment-setup) 
+Para la instalación del ambiente de desarrollo de React Native es necesario seguir la sección ['Enviroment Setup'](https://reactnative.dev/docs/environment-setup) 
 
 ## Acerca del proyecto
 
