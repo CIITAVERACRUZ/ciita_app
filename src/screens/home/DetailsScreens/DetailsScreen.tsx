@@ -13,7 +13,7 @@ import { Colors } from '../../../theme/Colors'
 
 interface Props extends StackScreenProps<FoodsStackType | PlacesStackType, 'DetailsScreen' >{}
 
-export const DetailsScreen = ({route}: Props) => {
+export const DetailsScreen = ({route, navigation}: Props) => {
      
      const  {item} = route.params;
      const {images, name, description} = item;     
@@ -32,6 +32,7 @@ export const DetailsScreen = ({route}: Props) => {
      const renderPhoto = (item: Restaurant | Platillo) => {
           return ( 
               <TouchableOpacity 
+                    onPress={() => navigation.navigate('DetailsScreen', {item})}
                     style={{
                          height: 100,
                          width: 100, 
@@ -69,6 +70,12 @@ export const DetailsScreen = ({route}: Props) => {
 
      return (
           <SafeAreaView style={{flex: 1}} >
+               <TouchableOpacity 
+                    style={{position: 'absolute', top: 10, left: 10, zIndex: 2}} 
+                    onPress={() => navigation.goBack()}
+               >
+                    <Icon size={50} name='arrow-back-outline' />
+               </TouchableOpacity>
                <View style={{flex: 1}}>
                     <Image 
                          source={{uri: images[0]}} 
