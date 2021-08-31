@@ -2,7 +2,7 @@
 
 Aplicación móvil destinada al apoyo de los comerciantes y negocios del pueblo de Papantla de Olarte, Veracruz.
 
-El instalable demo se encuentra en el siguiente [enlace](https://drive.google.com/file/d/1pnu0k_jjqYXESt5sufHL2TiQPseyUr_I/view?usp=sharing).    
+El instalable demo se encuentra en el siguiente [enlace](https://drive.google.com/file/d/1HrOztnR16xOzkySeB-SjUrJWFXYrFCts/view?usp=sharing).    
 
 
 Es probable que los celulares Android rechacen la instalación, seguir el siguiente [enlace](https://www.xatakandroid.com/tutoriales/como-instalar-aplicaciones-en-apk-en-un-movil-android) para poder instalarla. (Este paso no será necesario posteriormente ya que la aplicación estará disponible en las tiendas oficiales de Android y iOS).
