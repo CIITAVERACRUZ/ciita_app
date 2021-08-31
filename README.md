@@ -17,6 +17,8 @@ Use the package manager [yarn](https://classic.yarnpkg.com/en/) to install the p
 yarn install
 ```
 
+En caso de no tener conocimiento de React Native, la documentación se encuentra en el siguiente [enlace](https://reactnative.dev/docs/getting-started)
+
 ## Acerca del proyecto
 
 * React Native 0.64.1
